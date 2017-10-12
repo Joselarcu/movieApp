@@ -1,0 +1,21 @@
+
+<h1>Estrenos cartelera</h1>
+<hr>
+<app-movie-display [movies]="latest  | slice:0:6"></app-movie-display>
+<br>
+<br>
+<br>
+
+
+<h1>Mas populares</h1>
+<hr>
+<app-movie-display [movies]="popular | slice:0:6"></app-movie-display>
+<br>
+<br>
+<br>
+
+<h1>Películas infantiles mas populares</h1>
+<hr>
+<app-movie-display [movies]="kids | slice:0:6"></app-movie-display>
+
+

@@ -1,0 +1,55 @@
+<!-- {{movie |json}} -->
+<div *ngIf="movie">
+  <div class="row">
+    <div class="col">
+      <h1>{{movie.title}}</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      <img src="{{'http://image.tmdb.org/t/p/w300/'+ movie.poster_path}}" alt="{{movie.title}}">
+    </div>
+    <div class="col-md-8">
+      <div class="row">
+        <div class="col-md-12">
+          <h3>Sinopsis</h3>
+          <hr>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <p>{{movie.overview}}</p>
+        </div>
+      </div>
+      <div class="row" *ngIf="movie?.tagline">
+        <div class="col-md-12">
+          <h4>Frases célebres</h4>
+        </div>
+      </div>
+      <div class="row" *ngIf="movie?.tagline">
+        <div class="col-md-12">
+          <p>{{movie.tagline}}</p>
+        </div>
+      </div>
+      <br>
+
+      <div class="row">
+        <div class="col-md-12">
+          <p>Popularidad <span class="badge badge-primary">{{movie.popularity/100 | number:".0-0"}}/10</span></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <p>Voto promedio <span class="badge badge-primary">{{movie.vote_average}}</span></p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <button type="button" class="btn btn-outline-danger" (click)="goBack()">Volver</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
